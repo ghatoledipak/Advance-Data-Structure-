@@ -18,6 +18,10 @@ class ss
 	 {
 	    int ch,d;
 		d=data;
+		int rep=0;
+		
+		
+		
 		if(a==1)
 		{
 		do
@@ -32,6 +36,17 @@ class ss
 		}
 		else
 		{
+			node *cc;
+			cc=hn;
+			while(cc!=NULL)
+			{
+				if(cc->data==d)
+				{
+				cout<<"\n repeated element:";
+				return;
+				}
+				cc=cc->next;
+			}
 			cn=hn;
 			while(cn->next!=NULL)
 			{
@@ -53,20 +68,21 @@ class ss
 		nn=new node();
 		nn->next=NULL;
 		nn->data=data;
-		if(hn==NULL)
-		{
+			if(hn==NULL)
+			{
 			hn=nn;
-		}
-		else
-		{
+			}
+			else
+			{
 			cn=hn;
 			while(cn->next!=NULL)
 			{
 			     cn=cn->next;
 			}
 			cn->next=nn;
+			}
 		}
-		}
+		
 	 }
 
 	 void disp()
@@ -315,15 +331,7 @@ int main()
 {
 
   ss s,s1,s2,s3,s4,s5;
-  
-  /*
-  s1.acc(1,1);
-  cout<<"\n sec...:";
-  s2.acc(1,1);
-  s1.disp();
-  s2.disp();
-  s.uni(s1,s2);
-  s.disp();*/
+
 
   int ch,c,n,node1;
   do
